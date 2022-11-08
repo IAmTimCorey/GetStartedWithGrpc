@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "Shared";
+
+package employee;
+
+service Employee {
+	rpc AddNewEmployees(stream EmployeeModel) returns (EmployeesResult);
+}
+
+message EmployeeModel {
+	int32 id = 1;
+	string name = 2;
+}
+
+message EmployeesResult {
+	string processResult = 1;
+}
